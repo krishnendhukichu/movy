@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        {% for i in product_hunt %}
+        <div class="col-md-3">
+            <div class="card-deck">
+        <div class="card" style="width: 18rem; margin-bottom: 15px; ">
+  <img src="{{i.img.url}}" class="card-img-top" alt="..." width="300px" height="300px";>
+
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+    <a href="{% url 'productapp:detail' i.id %}" class="btn btn-primary">Go for</a>
+  </div>
+       </div>
+        </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
